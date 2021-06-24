@@ -5,10 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script></head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+        .blue {
+            color: blue;
+        }
+
+
+    </style>
+
+
+</head>
     <body>
         
-        <div id="app">{{ text }}</div>
+        <div id="app">
+            <input type="text" v-model="text" placeholder="scrivi il tuo titolo">
+            <button @click='imgStamp'>inserisci immagine</button>
+            <button v-on:click='textRed'>inserisci colore rosso titolo</button>
+            <button v-on:click='textBlu'>inserisci colore blu titolo</button>
+            <button v-on:click='textGreen'>inserisci colore verde titolo</button>
+
+            <br>
+            <br>
+
+            <h1 :class="color">{{text}}</h1>
+            <img :src="img" alt="">
+        </div>
         
         <script src="./js/script.js"></script>
 </body>
